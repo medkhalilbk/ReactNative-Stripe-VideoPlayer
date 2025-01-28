@@ -16,6 +16,7 @@ import BottomSheet, {
   BottomSheetView,
 } from "@gorhom/bottom-sheet";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { router } from "expo-router";
 
 const { width } = Dimensions.get("window");
 
@@ -84,11 +85,11 @@ const CourseDetailsScreen = () => {
           <ScrollView style={styles.scrollView}>
             {/* Video Section */}
             <View style={styles.videoContainer}>
-              {/*      <VideoView 
-          player={currentPlayer} 
-          style={styles.video} 
-          nativeControls={false}
-        /> */}
+              <VideoView
+                player={currentPlayer}
+                style={styles.video}
+                nativeControls={false}
+              />
               <TouchableOpacity style={styles.playButton} onPress={switchVideo}>
                 <Text style={styles.playButtonText}>
                   {currentPlayer === previewPlayer
@@ -160,16 +161,27 @@ const CourseDetailsScreen = () => {
             onChange={handleSheetChanges}
           >
             <BottomSheetView style={styles.contentContainer}>
-            <View style={styles.container}>
-      <TouchableOpacity style={[styles.card,{opacity:0.22}]}>
-        <Image style={{height:100,width:100}} source={require("@/assets/images/tun.png")} />
-        <Text style={styles.cardText}>Local Payment</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.card}>
-      <Image style={{height:100,width:100}} source={require("@/assets/images/world.png")} />
-      <Text style={styles.cardText}>International Payment</Text>
-      </TouchableOpacity>
-    </View>
+              <View style={styles.container}>
+                <TouchableOpacity style={[styles.card, { opacity: 0.22 }]}>
+                  <Image
+                    style={{ height: 100, width: 100 }}
+                    source={require("@/assets/images/tun.png")}
+                  />
+                  <Text style={styles.cardText}>Local Payment</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => {
+                    router.push("/dashboard/payment");
+                  }}
+                  style={styles.card}
+                >
+                  <Image
+                    style={{ height: 100, width: 100 }}
+                    source={require("@/assets/images/world.png")}
+                  />
+                  <Text style={styles.cardText}>International Payment</Text>
+                </TouchableOpacity>
+              </View>
             </BottomSheetView>
           </BottomSheetModal>
         </SafeAreaView>
@@ -183,26 +195,26 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
   },
-  card: { 
-    borderColor:"red",
-    borderWidth:2,
+  card: {
+    borderColor: "red",
+    borderWidth: 2,
     borderRadius: 20,
     padding: 20,
-    gap:20,
+    gap: 20,
     marginVertical: 10,
-    width: '100%',
-    height:250,
-    alignItems: 'center',
-    justifyContent:"center",
-    shadowColor: '#000',
+    width: "100%",
+    height: 250,
+    alignItems: "center",
+    justifyContent: "center",
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
     shadowRadius: 5,
     elevation: 3,
   },
-  cardText: { 
+  cardText: {
     fontSize: 18,
-    fontWeight: '600',
+    fontWeight: "600",
   },
   scrollView: {
     flex: 1,
