@@ -1,50 +1,73 @@
-# Welcome to your Expo app 👋
+## 🚀 ReactNative-Stripe-VideoPlayer  
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A **Proof of Concept (POC) / Minimum Viable Product (MVP)** for integrating **Stripe payments** with a **React Native video player**. This project demonstrates a paywall system where users must complete a **secure Stripe payment** before accessing video content.  
 
-## Get started
+### 🎯 Features  
+✅ **Stripe Payments** – Accept payments via **credit cards, Apple Pay, Google Pay**  
+✅ **React Native Video Player** – Play videos smoothly using `react-native-video`  
+✅ **Paywall System** – Unlock video content after successful payment  
+✅ **Secure Transactions** – Uses Stripe’s latest API for handling payments safely  
 
-1. Install dependencies
+### 📌 Use Cases  
+- **Pay-per-view streaming** (e.g., exclusive video content)  
+- **Subscription-based video access**  
+- **E-learning platforms**  
+- **NFT or token-gated video content**  
 
-   ```bash
-   npm install
-   ```
+---
 
-2. Start the app
+## 🛠 Tech Stack  
+- **React Native**  
+- **Stripe API** (`@stripe/stripe-react-native`)  
+- **React Native Video** (`react-native-video`)  
+- **Node.js / Supabase (for backend payment processing - optional)**  
 
-   ```bash
-    npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## 🚀 Getting Started  
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+### 1⃣ Install Dependencies  
+```sh
+npm install
+# OR
+yarn install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2⃣ Setup Stripe  
+Create a **Stripe account** at [Stripe Dashboard](https://dashboard.stripe.com/) and get your **API keys**.  
 
-## Learn more
+### 3⃣ Prebuild using Expo
+```sh
+npx expo prebuild
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+### 4⃣ Run the App  
+For **iOS** (use Mac with Xcode):  
+```sh
+cd ios && pod install && cd ..
+npx expo start
+```
+For **Android**:  
+```sh
+npx expo run:android
+``` 
+ For **IOS**:  
+```sh
+npx expo run:ios
+``` 
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+---
 
-## Join the community
+## 🤝 Open for Collaboration!  
+This is an **open-source experiment**, and I’d love to get **feedback & contributions**! Looking for:  
+🔹 **React Native developers**  
+🔹 **Backend engineers** (Node.js, Firebase, Stripe API)  
+🔹 **UI/UX designers**  
 
-Join our community of developers creating universal apps.
+**Drop a PR or connect if you're interested! 🚀**  
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+---
+
+## 🐟 License  
+This project is open-source and available under the **MIT License**.
+
