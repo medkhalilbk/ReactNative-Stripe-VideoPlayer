@@ -14,6 +14,7 @@ import {
 import { CardField, useStripe } from '@stripe/stripe-react-native';
 // Changed to Expo icons
 import { Feather } from '@expo/vector-icons';
+import { baseUrl } from '@/consts/urls';
 
 const PaymentScreen = () => {
   const [loading, setLoading] = useState(false);
@@ -41,7 +42,7 @@ const PaymentScreen = () => {
   };
 
   const fetchPaymentIntentClientSecret = async () => {
-    const response = await fetch('http://192.168.1.8:3000/create-payment-intent', {
+    const response = await fetch(baseUrl+'/create-payment-intent', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
